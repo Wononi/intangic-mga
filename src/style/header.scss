@@ -1,0 +1,187 @@
+header {
+  padding: 16px 153px 0 153px;
+  align-items: center;
+  display: grid;
+  grid-template-columns: fit-content(40%) 1fr fit-content(40%);
+
+  .navigation{
+    justify-self: center;
+    width: max-content;
+    display: flex;
+    column-gap: 32px;
+
+    a {
+      color: #fff;
+      text-transform: uppercase;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 100%;
+      letter-spacing: 0.04em;
+
+      &.active {
+        opacity: 0.3;
+      }
+    }
+  }
+
+  .scroll__nav {
+    position: fixed;
+    top: -100px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 100;
+    padding: 19px 24px;
+    background: rgba(49, 43, 50, 0.7);
+    backdrop-filter: blur(5px) contrast(80%);
+    -webkit-backdrop-filter: blur(5px) contrast(80%);
+    border-radius: 43px;
+    transition: all 1s;
+    
+    @media (max-width: 767px) {
+      display: none;
+    }
+
+    &-show {
+      top: 20px;
+    }
+  }
+
+  .application__btn {
+    color: #ffffff;
+    text-transform: uppercase;
+    padding: 12px 14px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    transition: background 500ms ease;
+    overflow: hidden;
+    position: relative;
+    width: fit-content;
+    justify-self: end;
+
+    &:hover {
+      background: rgba(225, 225, 225, 0.4);
+
+      &::before {
+        bottom: 50px;
+      }
+
+      &::after {
+        bottom: 12px;
+      }
+    }
+
+    &::before {
+      content: 'Contact us';
+      position: relative;
+      bottom: 0;
+      transition: all 500ms ease;
+    }
+
+    &::after {
+      content: 'Contact us';
+      position: absolute;
+      bottom: -50px;
+      left: 14px;
+      transition: all 500ms ease;
+    }
+  }
+
+  .download__page__link {
+    width: fit-content;
+    padding: 6px 14px;
+    background: #FFFFFF;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    font-size: 12px;
+    line-height: 100%;
+    color: #050402;
+    overflow: hidden;
+    position: relative;
+    justify-self: end;
+
+    svg{
+      vertical-align: middle;
+    }
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.8);
+
+      &::before {
+        bottom: 12px;
+      }
+
+      &::after {
+        bottom: 50px;
+      }
+    }
+
+    &::before {
+      content: 'get in touch';
+      position: absolute;
+      bottom: -50px;
+      left: 46px;
+      transition: all 500ms ease;
+    }
+
+    &::after {
+      content: 'get in touch';
+      position: relative;
+      bottom: 0;
+      transition: all 500ms ease;
+      vertical-align: middle;
+    }
+  }
+}
+
+@media (max-width: 1439px) {
+  header {
+    padding: 16px 134px 0 134px;
+  }
+}
+
+@media (max-width: 1023px) {
+  header {
+    padding: 16px 85px 0 85px;
+
+    .navigation {
+      column-gap: 16px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  header {
+    padding: 16px 16px 0 16px;
+    grid-template-columns: repeat(2, 1fr);
+
+    .navigation {
+      display: flex;
+      position: fixed;
+      bottom: 25px;
+      z-index: 100;
+      left: 50%;
+      transform: translate(-50%, 0);
+      width: max-content;
+      background: rgba(49, 43, 50, 0.7);
+      backdrop-filter: blur(5px) contrast(80%);
+      -webkit-backdrop-filter: blur(5px) contrast(80%);
+      border-radius: 43px;
+      padding: 19px 22px;
+
+      a {
+        color: #FFFFFF !important ;
+      }
+    }
+
+    .scroll__nav {
+      display: none;
+    }
+  }
+}
