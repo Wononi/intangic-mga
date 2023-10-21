@@ -15,6 +15,12 @@
       opacity: 0.6;
       width: 62%;
       margin: 32px auto 57px auto;
+
+      a {
+        color: inherit;
+        font-family: inherit;
+        text-decoration: rgba(255, 255, 255, 0.5) underline;
+      }
     }
 
     ul {
